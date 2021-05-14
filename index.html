@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+	
+<meta charset="UTF-8">
+<title>Canvas Experimenent</title>
+	
+	<style>
+		
+		body 
+		
+		{
+	
+	
+		text-align: center;	  
+		overflow: scroll;
+		background-color: lightyellow;
+			
+		}
+			
+	</style>
+	
+</head>
+
+	
+	
+<body>
+	
+	<h1> Crazy Canvas </h1>
+	<h2> The wide range of assortments in these circles and squares truly bring out the "crazy" in the canvas. </h2>
+	
+<canvas id="myCanvas" width="600" height="600" style="border:8px solid #202651;">
+	
+</canvas>
+	
+<script>
+	
+var c = document.getElementById ("myCanvas");
+
+var ctx = c.getContext("2d");
+
+function RectnCircleDrawerer()
+
+{
+		
+//circle 
+ctx.beginPath();
+ctx.arc(Math.floor(Math.random()*(600)+1), Math.floor(Math.random()*(600)+1), Math.floor(Math.random()*(100)+1), 0, 2 * Math.PI);
+	
+ctx.strokeStyle = "#" +  Math.floor(Math.random()*0xFFFFFF).toString(16);
+
+ctx.stroke();
+	
+//rectangle 
+ctx.beginPath();
+ctx.rect(Math.floor(Math.random()*(600)+1), Math.floor(Math.random()*(600)+1), Math.floor(Math.random()*(10)+1), Math.floor(Math.random()*(100)+1));
+ctx.stroke();	
+		
+}
+	
+setInterval (RectnCircleDrawerer, 1000);
+	
+
+	
+</script>	
+	
+	
+	
+</body>
+	
+</html>
